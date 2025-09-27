@@ -62,29 +62,29 @@ The Streamlit UI polls an Inngest API endpoint for the function's result and dis
 * *An active Google AI Studio API Key.*
 
 ## Step-by-Step Guide
-Clone the Repository
+### Clone the Repository
 ```
 git clone <repository-url>
 cd <repository-directory>
 ```
-Create a Virtual Environment
+### Create a Virtual Environment
 ```
 python -m venv venv
 source venv/bin/activate
 # On Windows: venv\Scripts\activate
 ```
-Install Dependencies
+### Install Dependencies
 ```
 pip install -r requirements.txt
-
-Configure Environment Variables
+```
+### Configure Environment Variables
 
 Create a .env file by copying the example:
-
+```
 cp .env.example .env
-
+```
 Open the .env file and add your Google API Key:
-
+```
 GOOGLE_API_KEY="your-google-api-key-here"
 ```
 ## How to Run
