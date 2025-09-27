@@ -1,12 +1,17 @@
-from google import genai
+import google.generativeai as genai
 from llama_index.readers.file import PDFReader
 from llama_index.core.node_parser import SentenceSplitter
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
-client = genai.Client()
 
-EMBED_MODEL = "gemini-embedding-001"
+api_key = os.getenv("GEMINI_API_KEY")
+if not api_key:
+  raise ValueError("GEMINI_API_KEY not found in environment variables.")
+genai.configure(api_key=api_key)
+
+EMBED_MODEL = "models/embedding-001"
 EMBED_DIM = 3072
 
 splitter = SentenceSplitter(chunk_size=1000, chunk_overlap=200)
@@ -20,9 +25,9 @@ def load_and_chunk_pdf(path: str):
   return chunks
 
 def embed_texts(texts: list[str]) -> list[list[float]]:
-  response = client.embeddings.create(
+  response = genai.embed_content(
     model=EMBED_MODEL,
-    input=texts
+    content=texts
   )
   return [item.embedding for item in response.data]
   
