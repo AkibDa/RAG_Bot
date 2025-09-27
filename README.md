@@ -42,7 +42,7 @@ d.  Return Result: The model generates a concise answer based only on the provid
 The Streamlit UI polls an Inngest API endpoint for the function's result and displays the answer and sources once the run is complete.
 
 ## Project Structure
-.
+```
 ├── qdrant_storage/              # Directory for storing uploaded PDFs
 ├── main.py               # FastAPI server hosting the Inngest functions
 ├── streamlit_app.py      # The Streamlit user interface
@@ -52,7 +52,7 @@ The Streamlit UI polls an Inngest API endpoint for the function's result and dis
 ├── .env                  # Your local environment variables (based on .env.example)
 ├── requirements.txt      # Python dependencies
 └── README.md             # This file
-
+```
 ## Setup and Installation
 ### Prerequisites
 * *Python 3.9+*
