@@ -43,7 +43,7 @@ The Streamlit UI polls an Inngest API endpoint for the function's result and dis
 
 ## Project Structure
 ```
-├── qdrant_storage/              # Directory for storing uploaded PDFs
+├── qdrant_storage/       # Directory for storing uploaded PDFs
 ├── main.py               # FastAPI server hosting the Inngest functions
 ├── streamlit_app.py      # The Streamlit user interface
 ├── data_loader.py        # Handles PDF loading, chunking, and embedding
