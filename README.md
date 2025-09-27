@@ -55,11 +55,11 @@ The Streamlit UI polls an Inngest API endpoint for the function's result and dis
 
 ## Setup and Installation
 ### Prerequisites
-*Python 3.9+*
+* *Python 3.9+*
 
-*Docker and Docker Compose*
+* *Docker and Docker Compose*
 
-*An active Google AI Studio API Key.*
+* *An active Google AI Studio API Key.*
 
 ## Step-by-Step Guide
 Clone the Repository
@@ -89,31 +89,33 @@ GOOGLE_API_KEY="your-google-api-key-here"
 ```
 ## How to Run
 You will need to run four separate processes in four different terminal tabs.
-```
-Start Qdrant
+
+### Start Qdrant
 
 The easiest way is with Docker. This command will download the image and start a container.
-
+```
 docker run -p 6333:6333 qdrant/qdrant
+```
 
-Start the Inngest Dev Server
+### Start the Inngest Dev Server
 
 The Inngest CLI provides a local development server that mimics the Inngest cloud platform.
-
+```
 inngest-cli dev
-
+```
 You can view the developer UI at http://127.0.0.1:8288.
 
-Start the FastAPI App
+### Start the FastAPI App
 
 This serves your Inngest functions so the dev server can communicate with them.
-
+```
 uvicorn main:app --reload
+```
 
-Run the Streamlit UI
+### Run the Streamlit UI
 
 This starts the user-facing web application.
-
+```
 streamlit run streamlit_app.py
 ```
 Open the URL provided by Streamlit (usually http://localhost:8501) in your browser to start using the application.
