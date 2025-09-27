@@ -17,7 +17,7 @@ This project implements a complete Retrieval-Augmented Generation (RAG) pipeline
 ## How It Works
 The project is divided into two main asynchronous workflows orchestrated by Inngest.
 
-1. Ingestion Flow
+### 1. Ingestion Flow
 When a user uploads a PDF via the Streamlit UI:
 
 The PDF is saved locally.
@@ -28,7 +28,7 @@ An Inngest function (rag_ingest_pdf) is triggered, which executes a series of st
 a.  Load & Chunk: The PDF is loaded, and its text is split into smaller, manageable chunks.
 b.  Embed & Upsert: Each text chunk is converted into a vector embedding using the Gemini embedding model. These embeddings, along with their corresponding text and metadata, are then "upserted" into the Qdrant vector database.
 
-2. Query Flow
+### 2. Query Flow
 When a user asks a question in the Streamlit UI:
 
 The Streamlit app sends an event (rag/query_pdf_ai) with the question to Inngest.
@@ -55,11 +55,11 @@ The Streamlit UI polls an Inngest API endpoint for the function's result and dis
 
 ## Setup and Installation
 ### Prerequisites
-**Python 3.9+**
+*Python 3.9+*
 
-**Docker and Docker Compose**
+*Docker and Docker Compose*
 
-**An active Google AI Studio API Key.**
+*An active Google AI Studio API Key.*
 
 ## Step-by-Step Guide
 Clone the Repository
